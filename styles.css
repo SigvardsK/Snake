@@ -1,0 +1,47 @@
+.container {
+    text-align: center;
+}
+
+.container div {
+    text-align: center;
+}
+
+
+.grid {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    border-style: solid;
+}
+
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.snake {
+    background-color: black;
+}
+
+.apple {
+    background-color: red;
+}
+
+button {
+    font-family: hack;
+    font-weight: bold;
+    padding: 9px 25px;
+    background-color:rgb(120, 125, 128);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+      
+}
+
+button:hover{
+  background-color: rgb(5, 156, 202);
+}
+
+
