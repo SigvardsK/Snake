@@ -1,11 +1,29 @@
+* {
+    background-color:aqua;
+    font-family: hack;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.score {
+    margin-bottom: 10px;
+}
+
 .container {
     text-align: center;
+    margin-top: 200px;
+    position: relative;
 }
 
 .container div {
     text-align: center;
 }
 
+span {
+    padding: 10px;
+    font-family: hack;
+    font-size: 24px;
+}
 
 .grid {
     width: 200px;
@@ -13,6 +31,7 @@
     display: flex;
     flex-wrap: wrap;
     border-style: solid;
+    margin: auto;
 }
 
 .grid div {
@@ -31,13 +50,15 @@
 button {
     font-family: hack;
     font-weight: bold;
+    font-size: 12px;
     padding: 9px 25px;
     background-color:rgb(120, 125, 128);
-    border: none;
+    border: solid;
+    border-color: black;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-      
+    margin-bottom: 10px;      
 }
 
 button:hover{

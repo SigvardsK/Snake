@@ -2,7 +2,8 @@ document.addEventListener ('DOMContentLoaded', () => {
     const squares = document.querySelectorAll ('.grid div')
     const scoreDisplay = document.querySelector ('span')
     const startBtn = document.querySelector ('.start')
-
+    const gameOver = document.querySelector ('.gameOver')
+        
     const width = 10
     let currentIndex = 0 // first div grid
     let appleIndex = 0 // apple location index in grid
@@ -23,11 +24,11 @@ document.addEventListener ('DOMContentLoaded', () => {
         randomApple ()
         direction = 1
         scoreDisplay.innerText = score
-        intervalTime = 1000
+        intervalTime = 800
         currentSnake = [2,1,0]
         currentIndex = 0
         currentSnake.forEach(index => squares[index].classList.add('snake'))
-        interval = setInterval (moveOutcomes, intervalTime)
+        interval = setInterval (moveOutcomes, intervalTime)        
     }
 
     // function that deals with ALL movement outcomes
@@ -43,12 +44,13 @@ document.addEventListener ('DOMContentLoaded', () => {
             squares[currentSnake[0] + direction].classList.contains('snake') //snake goes into itself
         ) {
             return clearInterval(interval) //clears interval with any of the above occurs
+            
         }
 
         const tail = currentSnake.pop () // removes last of the array and shows it
         squares[tail].classList.remove ('snake') //removes class of snake from TAIL
         currentSnake.unshift (currentSnake[0] + direction) //gives direction to HEAD of the array
-
+        
         // deals snake getting apple
         if (squares[currentSnake[0]].classList.contains ('apple')) {
             squares[currentSnake[0]].classList.remove ('apple')
@@ -75,7 +77,7 @@ document.addEventListener ('DOMContentLoaded', () => {
 
     // assign functions to keycodes
     function control(e) {
-        squares [currentIndex].classList.remove('snake')
+        // squares [currentIndex].classList.remove('snake')
         if (e.keyCode === 39) {
             direction = 1 // if press right arrow - goes right
         } else if (e.keyCode === 38) {
